@@ -97,6 +97,8 @@ RailsAdmin::Config::Model.class_eval do
   end
 end
 
+RailsAdmin.config.label_methods.unshift :admin_label
+
 ActionController::Base.class_eval do
   if Rails.env.development?
     before_filter do

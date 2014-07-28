@@ -26,7 +26,9 @@ end
 
 Autoreload on each request in development (no action required)
 
-#### `:admin_label` is now the default label method/field for models (takes precedence over any other)
+#### Prepend `admin_label` to `RailsAdmin.config.label_methods`
+
+Uses `admin_label` as primary label method/field for models
 
 #### Inline enable/disable actions in models with `:only` and `:except` methods
 
@@ -44,8 +46,9 @@ Fixes https://github.com/sferik/rails_admin/issues/2023
 
 Enables drag and drop sorting tabs for nested models exposing a `position` field
 
+You have to add the following in `app/assets/javascripts/rails_admin/custom/ui.js` to enable this feature:
+
 ``` js
-// add this in rails_admin/custom/ui.js
 //= require rails_admin/custom/sort_nested
 ```
 
@@ -55,7 +58,7 @@ Better have none than a confusing one
 
 #### Closure for `object_label`
 
-Gives you the ability to define `object_label` passing a block, for dynamic labels based on instances:
+Gives you the ability to define `object_label` passing a block to setup dynamic labels based on instances:
 
 ``` rb
 RailsAdmin.model "Administrator" do
