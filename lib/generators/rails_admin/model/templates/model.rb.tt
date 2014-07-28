@@ -1,0 +1,31 @@
+RailsAdmin.model '<%= class_name %>' do
+
+<% if ! options[:only].empty? -%>
+  only <%= options[:only].map{|a| ":#{a}"}.join(', ') %>
+
+<% end -%>
+<% if ! options[:except].empty? %>
+  except <%= options[:except].map{|a| ":#{a}"}.join(', ') %>
+
+<% end -%>
+<% if options[:nav] && !options[:nav].blank? -%>
+  navigation_label '<%= options[:nav] %>'
+
+<% end -%>
+  list do
+<% options[:list].each do |raw_field|
+  field_name, field_type = raw_field.split(":") 
+-%>
+    field <%= field_name %><%= ", :#{field_type}" if field_type %>
+<% end -%>
+  end
+
+  edit do
+<% options[:edit].each do |raw_field|
+  field_name, field_type = raw_field.split(":") 
+-%>
+    field <%= field_name %><%= ", :#{field_type}" if field_type %>
+<% end -%>
+  end
+
+end
