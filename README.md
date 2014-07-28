@@ -1,9 +1,9 @@
 # Better Rails Admin
 
-## Some bug fixes, a better Dsl and new features for Rails Admin.
+## Bug fixes, better Dsl and new features for Rails Admin.
 
 ``` rb
-gem 'better_rails_admin'
+gem 'better_rails_admin', :git => "https://github.com/mcasimir/better_rails_admin"
 ```
 
 ## Features
