@@ -6,6 +6,8 @@ RailsAdmin::AbstractModel.reset
 
 RailsAdmin.config.included_models = []
 
+load Rails.root.join("config/rails_admin.rb")
+
 Dir[Rails.root.join("app/admin/**/*.rb")].each do |path|
   load path
 end
